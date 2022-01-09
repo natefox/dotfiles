@@ -16,12 +16,6 @@ fi
 # eksctl autocomplete
 which eksctl > /dev/null && source <(eksctl completion $(basename $SHELL))
 
-# google cloud
-if [ -f "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.bash.inc" ] ; then
-  source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.bash.inc"
-  source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.bash.inc"
-fi
-
 alias watch="watch "
 
 which vault >/dev/null && complete -C $(which vault) vault
@@ -44,7 +38,7 @@ function cat {
 
 yolo() {
     currbranch=$(git branch --show-current)
-    if [ "$currbranch" = "master" ] ; then
+    if [[ ("$currbranch" = "master") || ("$currbranch" = "main") ]] ; then
         echo "on master. failing on purpose"
         return 1
     fi
