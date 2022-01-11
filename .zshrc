@@ -13,6 +13,9 @@ export PATH="/opt/homebrew/opt/findutils/libexec/gnubin:$PATH"
 export PATH="/opt/homebrew/opt/grep/libexec/gnubin:$PATH"
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+# fix my aws output
+export AWS_PAGER=""
+
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/nfox/.oh-my-zsh"
 
